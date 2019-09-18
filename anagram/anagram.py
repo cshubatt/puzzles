@@ -1,13 +1,20 @@
 def find_anagrams(word, candidates):
-    wordsp = word.split()
     for i in candidates:
-        test_wordsp = i.split()
-        for j in wordsp:
-            if j in test_wordsp:
-                test_wordsp.remove(j)
+        count1 = 0
+        # print(i)
+        candsp = list(i)
+        # print(candsp)
+        for j in word:
+            # print(j)
+            if j in candsp:
+                candsp.remove(j)
+                # print(candsp)
+                count1 += 1
             else:
+                #print("continue")
                 break
-        return(print(i))
+        if len(word) == count1:
+            return(print(i))
     return(print("No matches"))
     
-find_anagrams()
+find_anagrams(word, candidates)
